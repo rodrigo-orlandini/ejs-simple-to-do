@@ -4,6 +4,15 @@
   "sourceRoot": "src",
 	"entryFile": "infrastructure/main",
   "compilerOptions": {
-    "deleteOutDir": true
+    "deleteOutDir": true,
+		"assets": [{
+			"include": "infrastructure/http/views/**/*.ejs",
+			"outDir": "dist/src/",
+			"watchAssets": true
+		}, {
+			"include": "infrastructure/http/public/**/*",
+			"outDir": "dist/src/",
+			"watchAssets": true
+		}]
   }
 }
