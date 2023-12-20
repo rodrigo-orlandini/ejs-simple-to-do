@@ -1,11 +1,11 @@
 import { UseCase } from 'src/core/usecase';
 
-import { User } from '../entities/user';
+import { User } from 'src/domain/entities/user';
 
-import { UsersRepository } from '../repositories/users-repository';
-import { Hasher } from '../cryptography/hasher';
+import { UsersRepository } from 'src/domain/repositories/users-repository';
+import { Hasher } from 'src/domain/cryptography/hasher';
 
-import { UserAlreadyExistsError } from '../errors/user-already-exists-error';
+import { UserAlreadyExistsError } from 'src/domain/errors/user-already-exists-error';
 
 interface CreateUserUseCaseRequest {
   username: string;

@@ -1,4 +1,4 @@
-import { Entity } from '../../core/entity';
+import { Entity } from 'src/core/entity';
 
 export interface UserProps {
   username: string;

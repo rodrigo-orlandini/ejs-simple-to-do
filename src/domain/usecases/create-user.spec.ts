@@ -1,10 +1,10 @@
 import { CreateUserUseCase } from './create-user';
 
-import { StubUsersRepository } from '../../../test/repositories/stub-users-repository';
-import { StubHasher } from '../../../test/cryptography/stub-hasher';
+import { StubUsersRepository } from 'test/repositories/stub-users-repository';
+import { StubHasher } from 'test/cryptography/stub-hasher';
 
-import { makeUser } from '../../../test/factories/makeUser';
-import { UserAlreadyExistsError } from '../errors/user-already-exists-error';
+import { makeUser } from 'test/factories/makeUser';
+import { UserAlreadyExistsError } from 'src/domain/errors/user-already-exists-error';
 
 let usersRepository: StubUsersRepository;
 let hasher: StubHasher;
