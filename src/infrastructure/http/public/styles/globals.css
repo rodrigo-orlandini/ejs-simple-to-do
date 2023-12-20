@@ -23,6 +23,10 @@
 	color: #333333;
 }
 
+.toast-message {
+	font-size: 1.6rem;
+}
+
 .mb-m {
 	margin-bottom: 1.2rem;
 }
