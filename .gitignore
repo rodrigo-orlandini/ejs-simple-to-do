@@ -1,3 +1,8 @@
+# Environment
+.env
+
+# ---------------- NEST JS DEFAULT GIT IGNORE ------------------
+
 # compiled output
 /dist
 /node_modules

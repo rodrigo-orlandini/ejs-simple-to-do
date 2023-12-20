@@ -1,11 +1,13 @@
 import { Entity } from 'src/core/entity';
 
+import { User } from './user';
+
 export interface TaskProps {
   title: string;
   description?: string;
   isCompleted: boolean;
   createdAt: Date;
-  userId: string;
+  user: User;
 }
 
 export class Task extends Entity<TaskProps> {
