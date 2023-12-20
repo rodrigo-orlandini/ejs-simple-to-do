@@ -16,7 +16,7 @@ interface CreateUserUseCaseResponse {
   user: User;
 }
 
-export class CreateUser implements UseCase {
+export class CreateUserUseCase implements UseCase {
   constructor(
     private usersRepository: UsersRepository,
     private hasher: Hasher,

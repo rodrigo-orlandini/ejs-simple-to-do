@@ -1,4 +1,4 @@
-import { Entity } from 'src/core/entity';
+import { Entity } from '../../core/entity';
 
 export interface UserProps {
   username: string;
@@ -10,5 +10,9 @@ export class User extends Entity<UserProps> {
     const user = new User(props, id);
 
     return user;
+  }
+
+  get username() {
+    return this.props.username;
   }
 }
