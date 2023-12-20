@@ -1,3 +1,5 @@
+import { Injectable } from '@nestjs/common';
+
 import { UseCase } from 'src/core/usecase';
 
 import { User } from 'src/domain/entities/user';
@@ -16,6 +18,7 @@ interface CreateUserUseCaseResponse {
   user: User;
 }
 
+@Injectable()
 export class CreateUserUseCase implements UseCase {
   constructor(
     private usersRepository: UsersRepository,

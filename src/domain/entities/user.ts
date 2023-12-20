@@ -15,4 +15,8 @@ export class User extends Entity<UserProps> {
   get username() {
     return this.props.username;
   }
+
+  get password() {
+    return this.props.password;
+  }
 }
