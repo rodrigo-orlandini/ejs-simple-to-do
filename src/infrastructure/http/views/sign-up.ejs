@@ -17,6 +17,54 @@
 	</head>
 
 	<body>
-		<h1 class="test">Let's register a new user</h1>
+		<main class="container">
+			<div class="content">
+				<header>
+					<h1 class="title">Let's organize your tasks!</h1>
+
+					<p class="common-text mb-m">
+						It's a simple "To Do" application created to practice concepts of 
+						<strong class="common-text">EJS</strong>, 
+						<strong class="common-text">NestJS</strong> 
+						and 
+						<strong class="common-text">MongoDB</strong>.
+					</p>
+
+					<div class="references">
+						<div>
+							<img class="mr-m" src="images/ejs-logo.svg" alt="EJS logo" />
+							<img class="mr-m"src="images/nest-logo.svg" alt="NestJS logo" />
+							<img src="images/mongo-logo.svg" alt="MongoDB logo" />
+						</div>
+						
+						<div>
+							<button class="primary-button mr-m">GitHub</button>
+							<button class="primary-button">Dev's Portfolio</button>
+						</div>
+					</div>
+				</header>
+
+				<section id="create-account">
+					<h3 class="title">Create an account</h3>
+
+					<div class="primary-input-container mb-m">
+						<label class="primary-input-label" for="username">Username</label>
+						<input class="primary-input" type="text" name="username" placeholder="john_doe"/>
+					</div>
+
+					<div class="primary-input-container mb-m">
+						<label class="primary-input-label" for="password">Password</label>
+						<input class="primary-input" type="password" name="password" placeholder="********"/>
+					</div>
+
+					<button class="primary-button mb-l ">Sign Up!</button>
+
+					<p class="common-text">
+						If you already have an account,
+						<a class="link" href="/login">go to login</a>
+					</p>
+				</section>
+			</div>
+		</main>
 	</body>
 </html>

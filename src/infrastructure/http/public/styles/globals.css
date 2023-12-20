@@ -4,3 +4,33 @@
 	font-size: 10px;
 	font-family: 'Roboto', sans-serif;
 }
+
+.container {
+	width: 90vw;
+	margin: 8rem auto;
+	font-size: 4rem;
+}
+
+.common-text {
+	font-size: 1.6rem;
+	color: #888888;
+}
+
+.link {
+	font-size: 1.6rem;
+	font-weight: 700;
+	text-decoration: underline;
+	color: #333333;
+}
+
+.mb-m {
+	margin-bottom: 1.2rem;
+}
+
+.mb-l {
+	margin-bottom: 2rem;
+}
+
+.mr-m {
+	margin-right: 1.2rem;
+}
