@@ -11,6 +11,7 @@ import { z } from 'zod';
 import { CreateUserUseCase } from 'src/domain/usecases/create-user';
 
 import { ZodValidationPipe } from 'src/infrastructure/http/pipe/zod-validation-pipe';
+import { Public } from 'src/infrastructure/cryptography/public';
 
 import { UserAlreadyExistsError } from 'src/domain/errors/user-already-exists';
 
@@ -25,6 +26,7 @@ type CreateUserBodySchema = z.infer<typeof createUserBodySchema>;
 export class CreateUserController {
   constructor(private createUser: CreateUserUseCase) {}
 
+  @Public()
   @Post()
   @HttpCode(201)
   @UsePipes(new ZodValidationPipe(createUserBodySchema))

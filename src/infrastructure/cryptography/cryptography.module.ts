@@ -28,6 +28,7 @@ import { AuthGuard } from './auth.guard';
     }),
   ],
   providers: [
+    EnvironmentService,
     { provide: Hasher, useClass: BcryptHasher },
     { provide: Encrypter, useClass: JwtEncrypter },
     {

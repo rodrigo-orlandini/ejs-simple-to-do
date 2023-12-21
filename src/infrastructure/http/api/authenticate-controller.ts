@@ -11,6 +11,7 @@ import { z } from 'zod';
 import { AuthenticateUseCase } from 'src/domain/usecases/authenticate';
 
 import { ZodValidationPipe } from 'src/infrastructure/http/pipe/zod-validation-pipe';
+import { Public } from 'src/infrastructure/cryptography/public';
 
 import { InvalidCredentialsError } from 'src/domain/errors/invalid-credentials';
 
@@ -21,10 +22,11 @@ const authenticateBodySchema = z.object({
 
 type AuthenticateBodySchema = z.infer<typeof authenticateBodySchema>;
 
-@Controller('/users')
+@Controller('/users/login')
 export class AuthenticateController {
   constructor(private authenticate: AuthenticateUseCase) {}
 
+  @Public()
   @Post()
   @HttpCode(200)
   @UsePipes(new ZodValidationPipe(authenticateBodySchema))
