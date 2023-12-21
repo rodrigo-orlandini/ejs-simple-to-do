@@ -1,5 +1,4 @@
 .content {
-	margin: 0 20vw;
 	padding: 4rem 12rem;
 }
 
@@ -14,10 +13,18 @@ header h1.title {
 	color: #081C15;
 }
 
-header .references {
+header .features {
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
+}
+
+header .references {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	min-width: 20rem;
+	margin-left: 2rem;
 }
 
 #create-account {
@@ -83,4 +90,27 @@ div.primary-input-container:focus-within .primary-input-label {
 div.primary-input-container:focus-within .primary-input {
 	border: 1px solid #2A2FAF;
 	transition: all 300ms;
+}
+
+@media only screen and (max-width: 1024px) {
+  .content {
+    padding: 4rem 8rem;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+	header h1.title {
+		font-size: 2.4rem;
+	}
+
+  header .features {
+		flex-direction: column;
+		align-items: center;
+	}
+}
+
+@media only screen and (max-width: 480px) {
+	.content {
+    padding: 4rem;
+  }
 }
