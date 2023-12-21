@@ -4,6 +4,7 @@ import { ConfigModule } from '@nestjs/config';
 import { EnvironmentModule } from './environment/environment.module';
 import { DatabaseModule } from './database/database.module';
 import { HttpModule } from './http/http.module';
+import { ApiModule } from './http/api.module';
 
 import { environmentSchema } from './environment/environment';
 
@@ -16,6 +17,7 @@ import { environmentSchema } from './environment/environment';
     EnvironmentModule,
     DatabaseModule,
     HttpModule,
+    ApiModule,
   ],
 })
 export class AppModule {}
