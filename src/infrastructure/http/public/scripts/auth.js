@@ -42,6 +42,11 @@ const handleSignUpButtonClick = async () => {
 		toastr.error(json.message);
 		return;
 	}
+
+	toastr.success("User created!");
+
+	usernameInput.value = "";
+	passwordInput.value = "";
 };
 
 let usernameValue = undefined;
