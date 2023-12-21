@@ -11,6 +11,24 @@ const handleCreateTaskButtonClick = async () => {
 
 	createTaskButton.setAttribute("disabled", true);
 
+	const response = await fetch("/api/tasks", {
+		method: 'POST',
+		headers: { 'Content-Type': 'application/json' },
+		body: JSON.stringify({
+			title: taskNameValue,
+			description: taskDescriptionValue,
+		}),
+	});
+
+	createTaskButton.removeAttribute("disabled");
+
+	if(response.status !== 201) {
+		const json = await response.json();
+
+		toastr.error(json.message);
+		return;
+	}
+	
 	const tasksList = document.getElementById("tasks-list");
 	tasksList.innerHTML += `
 		<li>
@@ -20,8 +38,6 @@ const handleCreateTaskButtonClick = async () => {
 			<span>${taskDescriptionValue}</span>
 		</li>
 	`;	
-
-	createTaskButton.removeAttribute("disabled");
 
 	taskNameInput.value = "";
 	taskDescriptionInput.value = "";

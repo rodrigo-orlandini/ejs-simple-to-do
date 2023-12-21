@@ -1,29 +1,11 @@
-import mongoose, { HydratedDocument } from 'mongoose';
+import { Schema } from 'mongoose';
 
-import { Prop, Schema, SchemaFactory } from '@nestjs/mongoose';
-import { User } from 'src/domain/entities/user';
+export const TASK_MODEL_NAME = 'tasks';
 
-export type TaskDocument = HydratedDocument<Task>;
-
-@Schema()
-class Task {
-  @Prop()
-  _id!: string;
-
-  @Prop({ unique: true, required: true })
-  title!: string;
-
-  @Prop()
-  description!: string;
-
-  @Prop()
-  isCompleted!: boolean;
-
-  @Prop()
-  createdAt!: Date;
-
-  @Prop({ type: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Task' }] })
-  user!: User;
-}
-
-export const TaskSchema = SchemaFactory.createForClass(Task);
+export const TASK_MODEL_SCHEMA = new Schema({
+  title: String,
+  description: String,
+  isCompleted: Boolean,
+  createdAt: Date,
+  userId: String,
+});

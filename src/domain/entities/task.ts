@@ -4,7 +4,7 @@ import { User } from './user';
 
 export interface TaskProps {
   title: string;
-  description?: string;
+  description: string;
   isCompleted: boolean;
   createdAt: Date;
   user: User;
@@ -15,5 +15,25 @@ export class Task extends Entity<TaskProps> {
     const task = new Task(props, id);
 
     return task;
+  }
+
+  get title() {
+    return this.props.title;
+  }
+
+  get description() {
+    return this.props.description;
+  }
+
+  get isCompleted() {
+    return this.props.isCompleted;
+  }
+
+  get createdAt() {
+    return this.props.createdAt;
+  }
+
+  get user() {
+    return this.props.user;
   }
 }

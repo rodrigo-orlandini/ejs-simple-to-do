@@ -22,7 +22,7 @@ const authenticateBodySchema = z.object({
 
 type AuthenticateBodySchema = z.infer<typeof authenticateBodySchema>;
 
-@Controller('/users/login')
+@Controller('/api/users/login')
 export class AuthenticateController {
   constructor(private authenticate: AuthenticateUseCase) {}
 

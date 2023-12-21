@@ -25,7 +25,7 @@ const handleSignUpButtonClick = async () => {
 
 	signUpButton.setAttribute("disabled", true);
 
-	const response = await fetch("/users", {
+	const response = await fetch("/api/users", {
 		method: 'POST',
 		headers: { 'Content-Type': 'application/json' },
 		body: JSON.stringify({
@@ -59,7 +59,7 @@ const handleLoginButtonClick = async () => {
 
 	loginButton.setAttribute("disabled", true);
 
-	const response = await fetch("/users/login", {
+	const response = await fetch("/api/users/login", {
 		method: 'POST',
 		headers: { 'Content-Type': 'application/json' },
 		body: JSON.stringify({
