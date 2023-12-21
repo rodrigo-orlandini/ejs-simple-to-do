@@ -8,6 +8,7 @@ label.primary-input-label {
 	font-weight: 700;
 	color: #333333;
 	margin-bottom: 2px;
+	transition: all 300ms;
 }
 
 input.primary-input {
@@ -16,6 +17,7 @@ input.primary-input {
 	padding: 1.2rem 1.6rem;
 	min-width: 24rem;
 	font-size: 1.6rem;
+	transition: all 300ms;
 }
 
 input.primary-input::placeholder {
