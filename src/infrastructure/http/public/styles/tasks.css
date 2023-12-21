@@ -16,8 +16,7 @@ header h3.username {
 	margin-top: 4rem;
 }
 
-#add-task .subtitle,
-#tasks .subtitle {
+.subtitle {
 	font-size: 2rem;
 	margin-bottom: 1.2rem;
 }
@@ -34,7 +33,8 @@ header h3.username {
 	width: 100%;
 }
 
-#tasks ul#tasks-list li {
+ul#tasks-list li,
+ul#completed-tasks-list li {
 	list-style-type: none;
 	display: flex;
 	flex-direction: row;
@@ -44,6 +44,7 @@ header h3.username {
 	padding: 1.6rem 2rem;
 	transition: all 300ms;
 	margin-bottom: 0.8rem;
+	color: #333333;
 }
 
 #tasks ul#tasks-list li:hover {
@@ -53,14 +54,21 @@ header h3.username {
 	transition: all 300ms;
 }
 
-#tasks ul#tasks-list div.checkbox {
+ul#tasks-list div.checkbox,
+ul#completed-tasks-list div.checkbox {
 	width: 2rem;
 	height: 2rem;
 	background-color: #ffffff;
 	margin-right: 1.2rem;
 }
 
-#tasks ul#tasks-list li strong,
-#tasks ul#tasks-list li span {
+ul#tasks-list li strong,
+ul#completed-tasks-list li strong,
+ul#tasks-list li span,
+ul#completed-tasks-list li span {
 	font-size: 1.6rem;
+}
+
+#completed-tasks {
+	margin-top: 4rem;
 }

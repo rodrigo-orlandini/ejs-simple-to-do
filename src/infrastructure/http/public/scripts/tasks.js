@@ -5,6 +5,56 @@ window.onload = () => {
 		const emptyListMessage = document.getElementById("empty-list-message");
 		emptyListMessage.remove();
 	}
+
+	const completedTasksList = document.getElementById("completed-tasks-list");
+	
+	if(completedTasksList.childElementCount > 1) {
+		const emptyCompletedListMessage = document.getElementById("empty-completed-list-message");
+		emptyCompletedListMessage.remove();
+	}
+
+	const tasks = tasksList.childNodes;
+
+	for(let index = 0; index < tasks.length; index++){
+		const task = tasks[index];
+
+		if(task.nodeType === 1) {
+			task.addEventListener("click", handleTaskListItemClick);
+		}
+	}
+}
+
+const handleTaskListItemClick = (event) => {
+	let taskId = event.srcElement.id;
+
+	if(!taskId.startsWith("task-")) {
+		taskId = event.srcElement.parentElement.id;
+	}
+
+	const taskCheckbox = document.querySelector(`#tasks-list #${taskId} .checkbox`);
+	taskCheckbox.remove();
+
+	const taskElement = document.getElementById(taskId);
+	taskElement.remove();
+
+	const completedTasksList = document.getElementById("completed-tasks-list");
+	completedTasksList.appendChild(taskElement);
+
+	const emptyCompletedListMessage = document.getElementById("empty-completed-list-message");
+	if(emptyCompletedListMessage?.checkVisibility()) {
+		emptyCompletedListMessage.remove();
+	}
+
+	const tasksList = document.getElementById("tasks-list");
+
+	if(tasksList.childElementCount === 0) {
+		const tasksList = document.getElementById("tasks-list");
+		tasksList.innerHTML += `
+			<p id="empty-list-message" class="common-text">You have no tasks yet. Add one above and it will appear here!</p>
+		`;	
+	}
+
+	taskId = taskId.slice(5);
 }
 
 const handleCreateTaskButtonClick = async () => {
