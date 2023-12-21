@@ -1,17 +1,52 @@
 <!DOCTYPE html>
 <html lang="en">
-	<%- include('components/head-settings', { title: "Tasks | ToDo", cssFiles: ["tasks.css"] }) %>
+	<%- include('components/head-settings', { 
+		title: "Tasks | ToDo", 
+		cssFiles: ["tasks.css", "components/button.css", "components/input.css"] 
+	}); %>
 
 	<body>
 		<main class="container">
-			<div>
-				<h1>USERNAME</h1>
+			<header>
+				<div>
+					<h3 class="username"><%= username %></h3>
+
+					<p class="common-text">All tasks: <%= countTasks %></p>
+					<p class="common-text">Completed tasks: <%= countCompletedTasks %></p>
+				</div>
 				
-				<button 
-					id="logout-button"
-					class="primary-button" 
-				>Logout</button>
-			</div>
+				<%- include('components/button', { 
+					text: "Logout" , id: "logout-button" , extraClasses: "" 
+				}); %>
+			</header>
+
+			<section id="add-task">
+				<h4 class="subtitle">Insert new tasks</h4>
+
+				<div class="insert-form">
+					<%- include('components/input', { 
+						label: "Name", 
+						id: "task-name-input", 
+						extraClasses: "", 
+						extraContainerClasses: "mr-m", 
+						type: "text", 
+						placeholder: "Housework" 
+					}); %>
+
+					<%- include('components/input', { 
+						label: "Description", 
+						id: "task-description-input", 
+						extraClasses: "", 
+						extraContainerClasses: "description-input mr-m", 
+						type: "text", 
+						placeholder: "Do the dishes, clean the furniture and feed the dog." 
+					}); %>
+
+					<%- include('components/button', { 
+						text: "Create" , id: "create-task-button" , extraClasses: "" 
+					}); %>
+				</div>
+			</section>
 		</main>
 
 		<!-- Javascript -->

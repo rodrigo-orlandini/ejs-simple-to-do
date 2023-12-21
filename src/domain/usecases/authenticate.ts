@@ -45,7 +45,10 @@ export class AuthenticateUseCase implements UseCase {
     }
 
     const accessToken = await this.encrypter.encrypt({
-      sub: user.id,
+      sub: {
+        id: user.id,
+        username: user.username,
+      },
     });
 
     return { accessToken };

@@ -43,25 +43,23 @@
 				<section id="create-account">
 					<h3 class="title">Create an account</h3>
 
-					<div class="primary-input-container mb-m">
-						<%- include('components/input', { 
-							label: "Username", 
-							id: "username-input", 
-							extraClasses: "", 
-							type: "text", 
-							placeholder: "john_doe" 
-						}); %>
-					</div>
-
-					<div class="primary-input-container mb-m">
-						<%- include('components/input', { 
-							label: "Password", 
-							id: "password-input", 
-							extraClasses: "", 
-							type: "password", 
-							placeholder: "********" 
-						}); %>
-					</div>
+					<%- include('components/input', { 
+						label: "Username", 
+						id: "username-input", 
+						extraClasses: "", 
+						extraContainerClasses: "", 
+						type: "text", 
+						placeholder: "john_doe" 
+					}); %>
+					
+					<%- include('components/input', { 
+						label: "Password", 
+						id: "password-input", 
+						extraClasses: "", 
+						extraContainerClasses: "", 
+						type: "password", 
+						placeholder: "********" 
+					}); %>
 
 					<div class="mb-l">
 						<%- include('components/button', { 
