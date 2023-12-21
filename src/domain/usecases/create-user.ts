@@ -7,7 +7,7 @@ import { User } from 'src/domain/entities/user';
 import { UsersRepository } from 'src/domain/repositories/users-repository';
 import { Hasher } from 'src/domain/cryptography/hasher';
 
-import { UserAlreadyExistsError } from 'src/domain/errors/user-already-exists-error';
+import { UserAlreadyExistsError } from 'src/domain/errors/user-already-exists';
 
 interface CreateUserUseCaseRequest {
   username: string;

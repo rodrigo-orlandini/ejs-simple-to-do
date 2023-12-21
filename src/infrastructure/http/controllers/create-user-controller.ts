@@ -12,7 +12,7 @@ import { CreateUserUseCase } from 'src/domain/usecases/create-user';
 
 import { ZodValidationPipe } from 'src/infrastructure/http/pipe/zod-validation-pipe';
 
-import { UserAlreadyExistsError } from 'src/domain/errors/user-already-exists-error';
+import { UserAlreadyExistsError } from 'src/domain/errors/user-already-exists';
 
 const createUserBodySchema = z.object({
   username: z.string(),

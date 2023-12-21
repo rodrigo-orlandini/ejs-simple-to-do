@@ -49,6 +49,10 @@ const handleSignUpButtonClick = async () => {
 	passwordInput.value = "";
 };
 
+const handleLoginButtonClick = async () => {
+	console.log("Login")
+}
+
 let usernameValue = undefined;
 const usernameInput = document.getElementById("username-input");
 usernameInput.addEventListener("change", (event) => usernameValue = event.target.value);
@@ -59,6 +63,9 @@ passwordInput.addEventListener("change", (event) => passwordValue = event.target
 
 const signUpButton = document.getElementById("sign-up-button");
 signUpButton.addEventListener("click", handleSignUpButtonClick);
+
+const loginButton = document.getElementById("login-button");
+loginButton.addEventListener("click", handleLoginButtonClick);
 
 const githubButton = document.getElementById("github-button");
 githubButton.addEventListener("click", handleGithubButtonClick);
