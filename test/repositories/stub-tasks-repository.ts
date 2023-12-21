@@ -10,6 +10,28 @@ export class StubTasksRepository implements TasksRepository {
     return task;
   }
 
+  public async update(task: Task): Promise<Task> {
+    const taskIndex = this.items.findIndex((item) => item.id === task.id);
+
+    if (taskIndex === -1) {
+      throw Error('Trying to update an inexistent task.');
+    }
+
+    this.items[taskIndex] = task;
+
+    return this.items[taskIndex];
+  }
+
+  public async findById(id: string): Promise<Task | null> {
+    const task = this.items.find((task) => task.id === id);
+
+    if (!task) {
+      return null;
+    }
+
+    return task;
+  }
+
   public async findByTitle(title: string): Promise<Task | null> {
     const task = this.items.find((task) => task.title === title);
 

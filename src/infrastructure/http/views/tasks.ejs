@@ -55,12 +55,14 @@
 					<p id="empty-list-message" class="common-text">You have no tasks yet. Add one above and it will appear here!</p>
 
 					<% tasks.forEach(task => { %>
-						<li id="task-<%= task._id %>">
-							<div class="checkbox"></div>
-				
-							<strong><%= task.title %>:&nbsp</strong>
-							<span><%= task.description %></span>
-						</li>
+						<% if(!task.isCompleted) { %>
+							<li id="task-<%= task._id %>">
+								<div class="checkbox"></div>
+					
+								<strong><%= task.title %>:&nbsp</strong>
+								<span><%= task.description %></span>
+							</li>
+						<% } %>
 					<% }); %>
 				</ul>
 			</section>

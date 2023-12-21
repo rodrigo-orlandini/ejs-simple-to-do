@@ -24,11 +24,24 @@ window.onload = () => {
 	}
 }
 
-const handleTaskListItemClick = (event) => {
+const handleTaskListItemClick = async (event) => {
 	let taskId = event.srcElement.id;
 
 	if(!taskId.startsWith("task-")) {
 		taskId = event.srcElement.parentElement.id;
+	}
+
+	const taskUuid = taskId.slice(5);
+
+	const response = await fetch(`/api/tasks/${taskUuid}`, {
+		method: 'PATCH'
+	});
+
+	if(response.status !== 200) {
+		const json = await response.json();
+
+		toastr.error(json.message);
+		return;
 	}
 
 	const taskCheckbox = document.querySelector(`#tasks-list #${taskId} .checkbox`);
@@ -53,8 +66,6 @@ const handleTaskListItemClick = (event) => {
 			<p id="empty-list-message" class="common-text">You have no tasks yet. Add one above and it will appear here!</p>
 		`;	
 	}
-
-	taskId = taskId.slice(5);
 }
 
 const handleCreateTaskButtonClick = async () => {

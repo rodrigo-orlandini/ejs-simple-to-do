@@ -25,6 +25,10 @@ export class Task extends Entity<TaskProps> {
     return this.props.description;
   }
 
+  set isCompleted(isCompleted: boolean) {
+    this.props.isCompleted = isCompleted;
+  }
+
   get isCompleted() {
     return this.props.isCompleted;
   }
