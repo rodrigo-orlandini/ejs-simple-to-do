@@ -1,28 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<title>Welcome | ToDo</title>
-		
-		<!-- Responsive -->
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-		<!-- Styles -->
-		<link href="styles/globals.css" rel="stylesheet" />
-		<link href="styles/auth.css" rel="stylesheet" />
-
-		<!-- Favicon -->
-		<link rel="icon" type="image/x-icon" href="images/favicon.ico"/>
-		
-		<!-- Fonts -->
-		<link rel="preconnect" href="https://fonts.googleapis.com">
-		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-		<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-
-		<!-- Toast Library -->
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
-		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css" />
-	</head>
+	<%- include('components/head-settings', { title: "Welcome | ToDo", cssFile: "auth.css" }) %>
 
 	<body>
 		<main class="container">
