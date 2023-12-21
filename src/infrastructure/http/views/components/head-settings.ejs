@@ -6,7 +6,9 @@
 
 	<!-- Styles -->
 	<link href="styles/globals.css" rel="stylesheet" />
-	<link href="styles/<%= cssFile %>" rel="stylesheet" />
+	<% cssFiles.forEach(file => { %>
+		<link href="styles/<%= file %>" rel="stylesheet" />
+	<% }); %>
 
 	<!-- Favicon -->
 	<link rel="icon" type="image/x-icon" href="images/favicon.ico"/>

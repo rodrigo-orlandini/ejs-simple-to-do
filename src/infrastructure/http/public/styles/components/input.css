@@ -1,0 +1,33 @@
+div.primary-input-container {
+	display: flex;
+	flex-direction: column;
+}
+
+label.primary-input-label {
+	font-size: 1.2rem;
+	font-weight: 700;
+	color: #333333;
+	margin-bottom: 2px;
+}
+
+input.primary-input {
+	border-radius: 0;
+	border: 1px solid #cccccc;
+	padding: 1.2rem 1.6rem;
+	min-width: 24rem;
+	font-size: 1.6rem;
+}
+
+input.primary-input::placeholder {
+	color: #cccccc;
+}
+
+div.primary-input-container:focus-within .primary-input-label {
+	color: #2A2FAF;
+	transition: all 300ms;
+}
+
+div.primary-input-container:focus-within .primary-input {
+	border: 1px solid #2A2FAF;
+	transition: all 300ms;
+}
