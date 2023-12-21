@@ -37,4 +37,14 @@ export class MongoTasksRepository implements TasksRepository {
 
     return task;
   }
+
+  public async findManyByUserId(userId: string): Promise<Task[] | null> {
+    const tasks = await this.taskModel.find({ userId }).exec();
+
+    if (!tasks || tasks.length === 0) {
+      return null;
+    }
+
+    return tasks;
+  }
 }

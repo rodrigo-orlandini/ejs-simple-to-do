@@ -1,3 +1,12 @@
+window.onload = () => {
+	const tasksList = document.getElementById("tasks-list");
+	
+	if(tasksList.childElementCount > 1) {
+		const emptyListMessage = document.getElementById("empty-list-message");
+		emptyListMessage.remove();
+	}
+}
+
 const handleCreateTaskButtonClick = async () => {
 	if(!taskNameValue || taskNameValue.trim() === 0) {
 		toastr.error("Empty 'Name' field.");
@@ -38,6 +47,12 @@ const handleCreateTaskButtonClick = async () => {
 			<span>${taskDescriptionValue}</span>
 		</li>
 	`;	
+
+	const emptyListMessage = document.getElementById("empty-list-message");
+
+	if(emptyListMessage.checkVisibility()) {
+		emptyListMessage.remove();
+	}
 
 	taskNameInput.value = "";
 	taskDescriptionInput.value = "";

@@ -19,4 +19,14 @@ export class StubTasksRepository implements TasksRepository {
 
     return task;
   }
+
+  public async findManyByUserId(userId: string): Promise<Task[] | null> {
+    const tasks = this.items.filter((task) => task.user.id === userId);
+
+    if (!tasks || tasks.length === 0) {
+      return null;
+    }
+
+    return tasks;
+  }
 }

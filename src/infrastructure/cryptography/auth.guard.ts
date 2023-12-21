@@ -21,30 +21,25 @@ export class AuthGuard implements CanActivate {
   ) {}
 
   async canActivate(context: ExecutionContext): Promise<boolean> {
-    console.log('Start');
     const isPublic = this.reflector.getAllAndOverride<boolean>(IS_PUBLIC_KEY, [
       context.getHandler(),
       context.getClass(),
     ]);
-    console.log('public?');
+
     if (isPublic) {
       return true;
     }
-    console.log('bearer?');
 
     const request = context.switchToHttp().getRequest();
     let token = this.extractTokenFromHeader(request);
-    console.log('cookie?');
 
     if (!token) {
       token = this.extractTokenFromCookie(request);
     }
-    console.log('ready?');
 
     if (!token) {
       throw new UnauthorizedException();
     }
-    console.log('Payload');
 
     try {
       const payload = await this.jwt.verifyAsync(token, {

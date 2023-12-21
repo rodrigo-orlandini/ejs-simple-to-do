@@ -52,12 +52,16 @@
 				<h4 class="subtitle">Pending</h4>
 
 				<ul id="tasks-list">
-					<li>
-						<div class="checkbox"></div>
+					<p id="empty-list-message" class="common-text">You have no tasks yet. Add one above and it will appear here!</p>
 
-						<strong>Example title:&nbsp</strong>
-						<span>Example description with some random words just to test UI style</span>
-					</li>
+					<% tasks.forEach(task => { %>
+						<li>
+							<div class="checkbox"></div>
+				
+							<strong><%= task.title %>:&nbsp</strong>
+							<span><%= task.description %></span>
+						</li>
+					<% }); %>
 				</ul>
 			</section>
 		</main>
