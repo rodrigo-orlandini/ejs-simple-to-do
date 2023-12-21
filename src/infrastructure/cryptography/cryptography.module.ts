@@ -18,6 +18,6 @@ import { AuthGuard } from './auth.guard';
       useClass: AuthGuard,
     },
   ],
-  exports: [Hasher],
+  exports: [Hasher, Encrypter],
 })
 export class CryptographyModule {}
